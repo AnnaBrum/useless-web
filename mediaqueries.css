@@ -12,6 +12,27 @@
 .item-container {
   width: 15rem;
   height: 15rem;
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
+.move {
+  transform: translateY(-350px) scale(0.0001);
 }
+/* .scroll-prompt {
+  font-family: var(--display-font), sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--pop-font-color);
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  transform: rotate(-30deg);
+} */
+
+}
+
+box-shadow:
+0rem /* x offset */
+0rem /* y offset */
+15px /* blur size */
+2px /* blur spread */
+var(--glow);/* color, opacity */

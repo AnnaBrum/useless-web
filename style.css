@@ -3,10 +3,13 @@
 }
 :root {
   --font-main: 'Rubik';
+  --display-font: 'Fredoka-One';
   --main-font-color: #f6fff5e0;
+  --pop-font-color: rgb(0, 245, 25);
   --night-sky: rgb(7, 0, 65);
   --black-hole: black;
   --glow:rgb(245, 237, 231, 0.8);
+  --star-glow: #e5ffe5;
 }
 @font-face {
   font-family: 'Rubik';
@@ -24,6 +27,18 @@
   font-style: italic;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Fredoka-One';
+  src: url('FredokaOne-Regular.woff2') format('woff2'),
+      url('FredokaOne-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  height: 100rem;
+}
 .star-container {
     background-color: var(--night-sky);
     width: 100vw;
@@ -35,13 +50,21 @@
 }
 
 .glow {
-  box-shadow:
-    0rem /* x offset */
-    0rem /* y offset */
-    8px /* blur size */
-    2px /* blur spread */
-    var(--glow);/* color, opacity */
+  animation-name: glow;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
 }
+
+@keyframes glow {
+  from {
+    box-shadow: 0;
+  }
+  to {
+    box-shadow: 0 0 10px 5px var(--star-glow);
+  }
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -69,6 +92,13 @@ h2 {
     margin-bottom: 5rem;
 }
 
+/* .scroll-prompt {
+  font-family: var(--display-font), sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--pop-font-color);
+} */
+
 .black-hole {
     display: flex;
     align-items: center;
@@ -95,7 +125,7 @@ h2 {
     align-items: center;
     width: 10rem;
     height: 10rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
     position: relative;
 }
 
@@ -111,8 +141,19 @@ h2 {
 }
 
 .move {
-  transform: translateY(-250px) scale(0.0001);
+  transform:  translateY(-250px)  scale(0.0001);
   transition: transform 2s ease;
+}
 
+.spin {
+  animation:  spin 1s infinite;
+}
 
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
 }
