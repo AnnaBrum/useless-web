@@ -1,19 +1,47 @@
 * {
     box-sizing: border-box;
 }
-
-
-
+:root {
+  --font-main: 'Rubik';
+  --main-font-color: #f6fff5e0;
+  --night-sky: rgb(7, 0, 65);
+  --black-hole: black;
+  --glow:rgb(245, 237, 231, 0.8);
+}
+@font-face {
+  font-family: 'Rubik';
+  src: url('./fonts/Rubik-Light.woff2') format('woff2'),
+      url('./fonts/Rubik-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rubik-italic';
+  src: url('./fonts/Rubik-LightItalic.woff2') format('woff2'),
+      url('./fonts/Rubik-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
 .star-container {
-    background-color: rgb(7, 0, 65);
+    background-color: var(--night-sky);
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     top:0;
     left: 0;
     position: fixed;
 }
 
+.glow {
+  box-shadow:
+    0rem /* x offset */
+    0rem /* y offset */
+    8px /* blur size */
+    2px /* blur spread */
+    var(--glow);/* color, opacity */
+}
 .container {
     display: flex;
     align-items: center;
@@ -25,14 +53,18 @@
 }
 
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    color:azure;
-    font-size: 2rem;
+    font-family: var(--font-main), sans-serif;
+    color: var(--main-font-color);
+    text-align: center;
+    /* font-weight: bold; */
+    font-size: 1.5rem;
     margin-top: 5rem;
+    margin-bottom: 0;
 }
 h2 {
-    font-family: Arial, Helvetica, sans-serif;
-    color:azure;
+    font-family: var(--font-main), sans-serif;
+    color: var(--main-font-color);
+    text-align: center;
     font-size: 1rem;
     margin-bottom: 5rem;
 }
@@ -45,31 +77,42 @@ h2 {
 }
 
 .hole {
-    background-color: rgb(0, 0, 0);
-    width: 30rem;
-    height: 20rem;
+    background-color: var(--black-hole);
+    width: 80vw;
+    height: 50vw;
     border-radius: 50%;
     box-shadow:
         0rem /* x offset */
         0rem /* y offset */
         87px /* blur size */
         25px /* blur spread */
-        rgb(245, 237, 231, 0.8);/* color, opacity */
-
+        var(--glow);/* color, opacity */
 }
 
 
 .item-container {
-    width: 15rem;
-    height: 15rem;
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
     margin-top: 5rem;
+    position: relative;
 }
 
-#item {
+.item-container img {
    width: 100%;
    height: auto;
+   position: absolute;
+}
+
+/* hides images when not clicked */
+.hidden {
+  display: none;
 }
 
 .move {
-  object-position: top ;
+  transform: translateY(-250px) scale(0.0001);
+  transition: transform 2s ease;
+
+
 }
