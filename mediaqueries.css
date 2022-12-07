@@ -17,6 +17,7 @@
 .move {
   transform: translateY(-350px) scale(0.0001);
 }
+
 /* .scroll-prompt {
   font-family: var(--display-font), sans-serif;
   font-size: 1rem;
@@ -30,9 +31,3 @@
 
 }
 
-box-shadow:
-0rem /* x offset */
-0rem /* y offset */
-15px /* blur size */
-2px /* blur spread */
-var(--glow);/* color, opacity */

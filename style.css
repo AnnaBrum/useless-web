@@ -38,7 +38,9 @@
 
 body {
   height: 100rem;
+  width: 100vw;
 }
+
 .star-container {
     background-color: var(--night-sky);
     width: 100vw;
@@ -52,10 +54,9 @@ body {
 .glow {
   animation-name: glow;
   animation-duration: 3s;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease;
   animation-iteration-count: 1;
 }
-
 @keyframes glow {
   from {
     box-shadow: 0;
@@ -80,15 +81,16 @@ h1 {
     color: var(--main-font-color);
     text-align: center;
     /* font-weight: bold; */
-    font-size: 1.5rem;
-    margin-top: 5rem;
+    font-size: 1rem;
+    margin-top: 2rem;
     margin-bottom: 0;
 }
+
 h2 {
     font-family: var(--font-main), sans-serif;
     color: var(--main-font-color);
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-bottom: 5rem;
 }
 
@@ -108,8 +110,8 @@ h2 {
 
 .hole {
     background-color: var(--black-hole);
-    width: 80vw;
-    height: 50vw;
+    width: 70vw;
+    height: 40vw;
     border-radius: 50%;
     box-shadow:
         0rem /* x offset */
@@ -132,7 +134,7 @@ h2 {
 .item-container img {
    width: 100%;
    height: auto;
-   position: absolute;
+   position: absolute; /* stacks images */
 }
 
 /* hides images when not clicked */
@@ -146,7 +148,7 @@ h2 {
 }
 
 .spin {
-  animation:  spin 1s infinite;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
