@@ -71,7 +71,13 @@ for (let i = 0; i < starsFraction; i++) {
   star.style.height = size + 'px';
   star.style.backgroundColor = colour;
   starContainer.appendChild(star);
+
+  // Makes stars glow on scroll
+  starContainer.addEventListener('click', (event) => {
+    star.classList.toggle('glow');
+  })
 }
+
 
 /* Array of items which loops when being clicked*/
 const items = [
@@ -83,22 +89,39 @@ const items = [
 ];
 
 const itemContainer = document.querySelector('.item-container');
-const item = document.querySelector('#item')
 
-let currentImageIndex = 0;
-item.addEventListener('click', () => {
-  item.classList.add('move');
-  item.src = items[currentImageIndex];
-  currentImageIndex++;
 
-  if (currentImageIndex > items.length -1) {
-    currentImageIndex = 0;
-  }
+/* map creates a new list which can be manipulated */
+const images = items.map(src => {
+  const image = document.createElement('img');
+  image.src = src;
+  image.className = 'hidden';
+  itemContainer.appendChild(image);
+  return image;
 })
 
+let currentImageIndex = 0;
+images[currentImageIndex].classList.remove('hidden');
 
-// function moveImage(e) {
-//   item.style.position = "relative";
-//   item.style.top = "100px";
-//   e.preventDefault();
-// }
+function resetImage(imageIndex) {
+    /* timer that runs resetImage-function after 2s, so that the image can start again from the initial position */
+  window.setTimeout(function() {
+    images[imageIndex].classList.remove('move');
+    images[imageIndex].classList.add('hidden');
+  }, 2000)
+}
+
+itemContainer.addEventListener('click', () => {
+  /* first click hides current image */
+  images[currentImageIndex].classList.add('move');
+  resetImage(currentImageIndex);
+  /* then moves on to next image in count */
+  currentImageIndex++;
+  /*  */
+  if (currentImageIndex > images.length -1) {
+    currentImageIndex = 0;
+  }
+  /* then removes the class 'hidden' on the new image displayed */
+  images[currentImageIndex].classList.remove('hidden');
+})
+
