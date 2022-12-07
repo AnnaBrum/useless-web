@@ -1,0 +1,17 @@
+/* __________ DESKTOP 900 < __________ */
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 0;
+}
+.hole {
+  width: 40vw;
+  height: 20vw;
+}
+.item-container {
+  width: 15rem;
+  height: 15rem;
+  margin-top: 4rem;
+}
+}
