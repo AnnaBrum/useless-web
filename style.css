@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 :root {
   --font-main: 'Rubik';
@@ -8,13 +8,13 @@
   --pop-font-color: rgb(0, 245, 25);
   --night-sky: rgb(7, 0, 65);
   --black-hole: black;
-  --glow:rgb(245, 237, 231, 0.8);
+  --glow: rgb(245, 237, 231, 0.8);
   --star-glow: #e5ffe5;
 }
 @font-face {
   font-family: 'Rubik';
   src: url('./fonts/Rubik-Light.woff2') format('woff2'),
-      url('./fonts/Rubik-Light.woff') format('woff');
+    url('./fonts/Rubik-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -22,7 +22,7 @@
 @font-face {
   font-family: 'Rubik-italic';
   src: url('./fonts/Rubik-LightItalic.woff2') format('woff2'),
-      url('./fonts/Rubik-LightItalic.woff') format('woff');
+    url('./fonts/Rubik-LightItalic.woff') format('woff');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -30,7 +30,7 @@
 @font-face {
   font-family: 'Fredoka-One';
   src: url('FredokaOne-Regular.woff2') format('woff2'),
-      url('FredokaOne-Regular.woff') format('woff');
+    url('FredokaOne-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -42,13 +42,13 @@ body {
 }
 
 .star-container {
-    background-color: var(--night-sky);
-    width: 100vw;
-    height: 100vh;
-    /* overflow: hidden; */
-    top:0;
-    left: 0;
-    position: fixed;
+  background-color: var(--night-sky);
+  width: 100vw;
+  height: 100vh;
+  /* overflow: hidden; */
+  top: 0;
+  left: 0;
+  position: fixed;
 }
 
 .glow {
@@ -67,74 +67,62 @@ body {
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  position: absolute;
 }
 
 h1 {
-    font-family: var(--font-main), sans-serif;
-    color: var(--main-font-color);
-    text-align: center;
-    /* font-weight: bold; */
-    font-size: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 0;
+  font-family: var(--font-main), sans-serif;
+  color: var(--main-font-color);
+  text-align: center;
+  /* font-weight: bold; */
+  font-size: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 h2 {
-    font-family: var(--font-main), sans-serif;
-    color: var(--main-font-color);
-    text-align: center;
-    font-size: 0.8rem;
-    margin-bottom: 5rem;
+  font-family: var(--font-main), sans-serif;
+  color: var(--main-font-color);
+  text-align: center;
+  font-size: 0.8rem;
+  margin-bottom: 5rem;
 }
 
-/* .scroll-prompt {
-  font-family: var(--display-font), sans-serif;
-  font-size: 1rem;
-  text-align: center;
-  color: var(--pop-font-color);
-} */
-
 .black-hole {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* so the hole doesn't push the stars down */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* so the hole doesn't push the stars down */
 }
 
 .hole {
-    background-color: var(--black-hole);
-    width: 70vw;
-    height: 40vw;
-    border-radius: 50%;
-    box-shadow:
-        0rem /* x offset */
-        0rem /* y offset */
-        87px /* blur size */
-        25px /* blur spread */
-        var(--glow);/* color, opacity */
+  background-color: var(--black-hole);
+  width: 70vw;
+  height: 40vw;
+  border-radius: 50%;
+  box-shadow: 0rem /* x offset */ 0rem /* y offset */ 87px /* blur size */ 25px
+    /* blur spread */ var(--glow); /* color, opacity */
 }
 
-
 .item-container {
-    display: flex;
-    align-items: center;
-    width: 10rem;
-    height: 10rem;
-    margin-top: 3rem;
-    position: relative;
+  display: flex;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  margin-top: 3rem;
+  position: relative;
 }
 
 .item-container img {
-   width: 100%;
-   height: auto;
-   position: absolute; /* stacks images */
+  width: 100%;
+  height: auto;
+  position: absolute; /* stacks images */
 }
 
 /* hides images when not clicked */
@@ -143,19 +131,7 @@ h2 {
 }
 
 .move {
-  transform:  translateY(-250px)  scale(0.0001);
+  transform: translateY(-200px) scale(0.0001);
   transition: transform 2s ease;
 }
 
-.spin {
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  from {
-      transform: rotate(0deg);
-  }
-  to {
-      transform: rotate(360deg);
-  }
-}

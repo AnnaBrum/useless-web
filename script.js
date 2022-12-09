@@ -72,63 +72,60 @@ for (let i = 0; i < starsFraction; i++) {
   star.style.backgroundColor = colour;
   starContainer.appendChild(star);
 
-// Makes stars glow on scroll
+  // Makes stars glow on scroll
   window.addEventListener('scroll', (event) => {
     star.classList.toggle('glow');
-  })
+  });
 }
-
-
 
 /* Array of items which loops when being clicked*/
 const items = [
-  './images/bananas.png',
-  './images/chair.png',
-  './images/dog.png',
-  './images/hen.png',
-  './images/money.png',
-  './images/cheese.png',
-  './images/musk.png',
-  './images/mug.png',
-  './images/rose.png',
-  './images/shoe.png',
-
+  {src: './images/bananas.png', alt:"bananas"},
+  {src: './images/chair.png', alt:"chair"},
+  {src: './images/dog.png', alt:"dog"},
+  {src: './images/hen.png', alt:"hen"},
+  {src: './images/money.png', alt:"money"},
+  {src: './images/cheese.png', alt:"cheese"},
+  {src: './images/musk.png', alt:"Elon Musk"},
+  {src: './images/mug.png', alt:"mug"},
+  {src: './images/rose.png', alt:"rose"},
+  {src: './images/shoe.png', alt:"shoe"}
 ];
 
 const itemContainer = document.querySelector('.item-container');
 
-
 /* map creates a new list which can be manipulated */
-const images = items.map(src => {
+const images = items.map(({src, alt}) => { //same as: let {src, alt}  = {src: './images/shoe.png', alt:"shoe"}
   const image = document.createElement('img');
   image.src = src;
+  image.alt = alt;
   image.className = 'hidden';
   itemContainer.appendChild(image);
   return image;
-})
+});
 
 let currentImageIndex = 0;
 images[currentImageIndex].classList.remove('hidden');
 
 function resetImage(imageIndex) {
-    /* timer that runs resetImage-function after 2s, so that the image can start again from the initial position */
-  window.setTimeout(function() {
+  /* timer that runs resetImage-function after 2s, so that the image can start again from the initial position */
+  window.setTimeout(function () {
     images[imageIndex].classList.remove('move');
     images[imageIndex].classList.add('hidden');
-  }, 2000)
+  }, 2000);
 }
 
 itemContainer.addEventListener('click', () => {
   /* first click adds class move to image */
   images[currentImageIndex].classList.add('move');
+
   resetImage(currentImageIndex);
   /* then moves on to next image in count */
   currentImageIndex++;
   /* Starts back on first image after the last is clicked */
-  if (currentImageIndex > images.length -1) {
+  if (currentImageIndex > images.length - 1) {
     currentImageIndex = 0;
   }
   /* then removes the class 'hidden' on the new image displayed */
   images[currentImageIndex].classList.remove('hidden');
-})
-
+});
