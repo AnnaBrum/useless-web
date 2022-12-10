@@ -44,8 +44,8 @@ body {
 
 .glow {
   animation-name: glow;
-  animation-duration: 3s;
-  animation-timing-function: ease;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 @keyframes glow {
@@ -95,12 +95,23 @@ h2 {
   width: 70vw;
   height: 40vw;
   border-radius: 50%;
-  box-shadow:
-    0rem /* x offset */
-    0rem /* y offset */
-    87px /* blur size */
-    25px /* blur spread */
-    var(--glow); /* color, opacity */
+  box-shadow: 0rem /* x offset */ 0rem /* y offset */ 87px /* blur size */ 25px
+    /* blur spread */ var(--glow); /* color, opacity */
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 600ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .item-container {

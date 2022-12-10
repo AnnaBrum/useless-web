@@ -27,8 +27,8 @@ for (let i = 0; i < starsFraction; i++) {
   star.style.width = size + 'px';
   star.style.height = size + 'px';
 
-  const starColors = ['#00ffff', '#7fffd4', '#ff69b4', '#ffffff', '#ffff00'];
 
+  const starColors = ['#c6f7f7', '#d9fcf1', '#fccfe6', '#ffffff', '#f7f7c8'];
   /*  A for-loop that distributes random background-color for each star */
   for (let i = 0; i < starColors.length; i++) {
     let randomColor = Math.floor(Math.random() * starColors.length);
@@ -42,6 +42,8 @@ for (let i = 0; i < starsFraction; i++) {
     star.classList.toggle('glow');
   });
 }
+
+/* IMAGES */
 
 /* Array of items which loops when being clicked */
 const items = [
@@ -95,3 +97,11 @@ itemContainer.addEventListener('click', () => {
   /* then removes the class 'hidden' on the new image displayed */
   images[currentImageIndex].classList.remove('hidden');
 });
+
+/* DANCING BLACK HOLE */
+
+const blackHole = document.querySelector('.hole');
+
+blackHole.addEventListener('click', () => {
+  blackHole.classList.toggle('spin');
+})
