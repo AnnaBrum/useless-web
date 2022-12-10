@@ -27,14 +27,6 @@
   font-style: italic;
   font-display: swap;
 }
-@font-face {
-  font-family: 'Fredoka-One';
-  src: url('FredokaOne-Regular.woff2') format('woff2'),
-    url('FredokaOne-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 body {
   height: 100rem;
@@ -45,7 +37,6 @@ body {
   background-color: var(--night-sky);
   width: 100vw;
   height: 100vh;
-  /* overflow: hidden; */
   top: 0;
   left: 0;
   position: fixed;
@@ -80,7 +71,6 @@ h1 {
   font-family: var(--font-main), sans-serif;
   color: var(--main-font-color);
   text-align: center;
-  /* font-weight: bold; */
   font-size: 1rem;
   margin-top: 2rem;
   margin-bottom: 0;
@@ -98,7 +88,6 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* so the hole doesn't push the stars down */
 }
 
 .hole {
@@ -106,8 +95,12 @@ h2 {
   width: 70vw;
   height: 40vw;
   border-radius: 50%;
-  box-shadow: 0rem /* x offset */ 0rem /* y offset */ 87px /* blur size */ 25px
-    /* blur spread */ var(--glow); /* color, opacity */
+  box-shadow:
+    0rem /* x offset */
+    0rem /* y offset */
+    87px /* blur size */
+    25px /* blur spread */
+    var(--glow); /* color, opacity */
 }
 
 .item-container {
@@ -134,4 +127,3 @@ h2 {
   transform: translateY(-200px) scale(0.0001);
   transition: transform 2s ease;
 }
-

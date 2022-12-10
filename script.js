@@ -1,67 +1,24 @@
-/* USELESS-WEB REQUIREMENTS
-1. check
-The project should use at least two types of event listeners for example scroll, click and keypress.
+/* STAR-CONTAINER
+Stolen from: https://dev.to/nicm42/creating-stars-using-javascript-46ca and modified to meet my needs*/
 
-2.  check
-The project should use some kind of iteration for example map, forEach or for.
-
-3.  check
-The project should use arrays or objects or both to store values.
-
-4.  check ?
-The project should have a nice user interface with consistent margins and paddings.
-
-5. check ?
-The project should use CSS variables for colors and font families..
-
-6. check
-The project should use at least one self hosted font with woff and woff2 format.
-
-7. check ?
-The project should be responsive and be built using the method mobile-first.
-
-8. check ?
-The project should use responsive images when using images.
-
-9.
-The project should implement an accessible graphical user interface.
-
-10.
-The repository should be created from the template repository yrgo/template-useless-web
-
-11.
-The project must not include any coding errors, warning or notices.
-
-12.
-The project must be tested on at least two of your classmates computers. Add the testers names to the README.md file.
-
-13.
-The project should be deployed to either Netlify or Vercel
-
-14.
-The application should be pushed to a public repository on GitHub.
-
-15.
-The application should be useless 🙅‍♀️ */
-
-/* STAR-CONTAINER */
+/* places the stars randomly. Math.random() funciton returns a decimal-number between 0-1 */
 function random(min, max) {
   return min + Math.random() * (max + 1 - min);
 }
 
+/* Applies the div with class StarContainer as canvas for the stars. Then counts the size of the starContainer(which is responsive to the view-window) and sets the fraction that will contain stars to 2000*/
 const starContainer = document.querySelector('.star-container');
-const canvasSize = starContainer.offsetWidth * starContainer.offsetHeight;
-const starsFraction = canvasSize / 2000;
+const containerSize = starContainer.offsetWidth * starContainer.offsetHeight;
+const starsFraction = containerSize / 2000;
 
+/* To place each star randomly on x and y-axis, and set opacity and size randomly between two values*/
 for (let i = 0; i < starsFraction; i++) {
-  // Set up random elements
   let xAxis = random(0, 100);
   let yAxis = random(0, 100);
-  let alpha = random(0.5, 1);
-  let size = random(1, 2);
-  let colour = '#ffffff';
+  let alpha = random(0.2, 1);
+  let size = random(0.5, 2);
 
-  // Add them to the body
+  /* then each of the stars is added to the starContainer */
   const star = document.createElement('div');
   star.style.position = 'relative';
   star.style.left = xAxis + '%';
@@ -69,33 +26,42 @@ for (let i = 0; i < starsFraction; i++) {
   star.style.opacity = alpha;
   star.style.width = size + 'px';
   star.style.height = size + 'px';
-  star.style.backgroundColor = colour;
+
+  const starColors = ['#00ffff', '#7fffd4', '#ff69b4', '#ffffff', '#ffff00'];
+
+  /*  A for-loop that distributes random background-color for each star */
+  for (let i = 0; i < starColors.length; i++) {
+    let randomColor = Math.floor(Math.random() * starColors.length);
+    star.style.backgroundColor = starColors[randomColor];
+  }
+
   starContainer.appendChild(star);
 
-  // Makes stars glow on scroll
+  /* Makes stars glow on scroll */
   window.addEventListener('scroll', (event) => {
     star.classList.toggle('glow');
   });
 }
 
-/* Array of items which loops when being clicked*/
+/* Array of items which loops when being clicked */
 const items = [
-  {src: './images/bananas.png', alt:"bananas"},
-  {src: './images/chair.png', alt:"chair"},
-  {src: './images/dog.png', alt:"dog"},
-  {src: './images/hen.png', alt:"hen"},
-  {src: './images/money.png', alt:"money"},
-  {src: './images/cheese.png', alt:"cheese"},
-  {src: './images/musk.png', alt:"Elon Musk"},
-  {src: './images/mug.png', alt:"mug"},
-  {src: './images/rose.png', alt:"rose"},
-  {src: './images/shoe.png', alt:"shoe"}
+  { src: './images/bananas.png', alt: 'bananas' },
+  { src: './images/chair.png', alt: 'chair' },
+  { src: './images/dog.png', alt: 'dog' },
+  { src: './images/hen.png', alt: 'hen' },
+  { src: './images/money.png', alt: 'money' },
+  { src: './images/cheese.png', alt: 'cheese' },
+  { src: './images/musk.png', alt: 'Elon Musk' },
+  { src: './images/mug.png', alt: 'mug' },
+  { src: './images/rose.png', alt: 'rose' },
+  { src: './images/shoe.png', alt: 'shoe' },
 ];
 
 const itemContainer = document.querySelector('.item-container');
 
-/* map creates a new list which can be manipulated */
-const images = items.map(({src, alt}) => { //same as: let {src, alt}  = {src: './images/shoe.png', alt:"shoe"}
+/* map creates a new array of items which can be manipulated */
+const images = items.map(({ src, alt }) => {
+  //same as: let {src, alt}  = {src: './images/shoe.png', alt:"shoe"}
   const image = document.createElement('img');
   image.src = src;
   image.alt = alt;
