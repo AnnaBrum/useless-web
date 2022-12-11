@@ -4,6 +4,8 @@
 
 A useless website. Throw stuff into a black hole and watch it disappear.
 
+https://useless-web-weld.vercel.app/
+
 # Installation
 
 Download the files and open index.html in your browser.
