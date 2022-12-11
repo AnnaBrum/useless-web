@@ -1,12 +1,12 @@
-INSERT MANDATORY GIF
+![black hole](https://media.giphy.com/media/3og0IFrHkIglEOg8Ba/giphy.gif)
 
-# Project Title
+# THROW IT INTO NOTHINGNESS
 
-Text about the project. This would also be a great place to link the game on Netlify.
+A useless website. Throw stuff into a black hole and watch it disappear.
 
 # Installation
 
-Add the installation instructions.
+Download the files and open index.html in your browser.
 
 # Code Review
 
