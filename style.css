@@ -44,7 +44,7 @@ body {
 
 .glow {
   animation-name: glow;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
@@ -56,7 +56,14 @@ body {
     box-shadow: 0 0 10px 5px var(--star-glow);
   }
 }
-
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px 5px var(--star-glow);
+  }
+  to {
+    box-shadow: 0;
+  }
+}
 .container {
   display: flex;
   align-items: center;

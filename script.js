@@ -27,7 +27,6 @@ for (let i = 0; i < starsFraction; i++) {
   star.style.width = size + 'px';
   star.style.height = size + 'px';
 
-
   const starColors = ['#c6f7f7', '#d9fcf1', '#fccfe6', '#ffffff', '#f7f7c8'];
   /*  A for-loop that distributes random background-color for each star */
   for (let i = 0; i < starColors.length; i++) {
@@ -104,4 +103,4 @@ const blackHole = document.querySelector('.hole');
 
 blackHole.addEventListener('click', () => {
   blackHole.classList.toggle('spin');
-})
+});
