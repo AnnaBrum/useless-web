@@ -12,6 +12,8 @@ Download the files and open index.html in your browser.
 
 # Code Review
 
+What a perfectly useless website!
+
 1. `script.js:16-19` - These could probably be `const` instead of `let` since they don't change.
 2. `script.js:32-35` - Nice random calculation, but the for loop might be unnecessary since it overwrites the value each iteration and will get the last value everytime?
 3. `script.js:40` - A parameter is declared but is never read.
