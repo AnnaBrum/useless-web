@@ -22,5 +22,5 @@ Download the files and open index.html in your browser.
 
 Tested by the following people:
 
-1. Jane Doe
-2. John Doe
+1. Lucas Källberg
+2. Vali Al Osachi
