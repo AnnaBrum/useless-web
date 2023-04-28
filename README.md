@@ -2,7 +2,7 @@
 
 # THROW IT INTO NOTHINGNESS
 
-A useless website. Throw stuff into a black hole and watch it disappear...if you can hit it!
+A useless website. Throw stuff into a black hole and watch it disappear!
 
 https://useless-web-weld.vercel.app/
 
