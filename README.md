@@ -3,6 +3,7 @@
 # THROW IT INTO NOTHINGNESS
 
 A useless website. Throw stuff into a black hole and watch it disappear!
+PS. try making the hole spin! and scroll to see some weird star-glow!
 
 https://useless-web-weld.vercel.app/
 
